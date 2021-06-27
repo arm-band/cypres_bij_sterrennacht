@@ -1,0 +1,23 @@
+{
+    "name": "cypres_bij_sterrennacht",
+    "version": "0.0.1",
+    "description": "Cypress + reg-cli によるビジュアルリグレッションテストのスクリプト。",
+    "main": "sterrennacht.js",
+    "scripts": {
+        "result": "node ./sterrennacht",
+        "cypress:before": "cypress run --config-file false --config trashAssetsBeforeRuns=true -s cypress/integration/visual-regression-test/cafe_bij_nacht-before.spec.js",
+        "cypress:after": "cypress run --config-file false --config trashAssetsBeforeRuns=false -s cypress/integration/visual-regression-test/cafeterras_bij_nacht-after.spec.js",
+        "cypress": "run-s cypress:*",
+        "reg": "reg-cli ./cypress/screenshots/visual-regression-test/before ./cypress/screenshots/visual-regression-test/after ./cypress/screenshots/visual-regression-test/diff -R ./cypress/screenshots/visual-regression-test/report/index.html -M 0.2 -I",
+        "test": "run-s cypress:* reg result"
+    },
+    "author": "Arm Band",
+    "license": "ISC",
+    "dependencies": {
+        "browser-sync": "^2.26.14",
+        "cypress": "^7.5.0",
+        "npm-run-all": "^4.1.5",
+        "opener": "^1.5.2",
+        "reg-cli": "^0.17.0"
+    }
+}

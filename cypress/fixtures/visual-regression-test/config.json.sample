@@ -1,0 +1,46 @@
+{
+    "commons": {
+        "url": {
+            "ref": "https://www.example.jp",
+            "test": "https://demo.example.jp"
+        },
+        "hideElements": [
+            "#__bs_notify__",
+            ".returnPageTop",
+            ".c-returnPageTop",
+            "#navbar",
+            ".navbar"
+        ],
+        "screenshot": {
+            "capture": "fullPage",
+            "waitMsec": 1000
+        }
+    },
+    "viewports": [
+        {
+            "name": "phone",
+            "width": 375,
+            "height": 667
+        },
+        {
+            "name": "tablet",
+            "width": 1024,
+            "height": 768
+        },
+        {
+            "name": "pc",
+            "width": 1920,
+            "height": 1080
+        }
+    ],
+    "pages": [
+        {
+            "test_id": "top",
+            "uri": "/"
+        },
+        {
+            "test_id": "about",
+            "uri": "/about.html"
+        }
+    ]
+}
